@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      x:Class="ButtonLoader.ButtonActivityIndicatorRight">
+        <Button x:Name="InnerButtonRight"
+            Text="Button text"
+            BackgroundColor="Orange"
+            TextColor="White"
+            BorderWidth="1"
+            BorderColor="LightSkyBlue"
+            HeightRequest="50"
+            CornerRadius="25"
+            Clicked="OnClicked"
+            IsVisible="True" />
+
+        <ActivityIndicator IsVisible="False" Opacity="0" x:Name="InnerActivityIndicatorRight" IsRunning="True" HorizontalOptions="End" Color="White">
+            <ActivityIndicator.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS" Value="0,0,10,0"></On>
+                </OnPlatform>
+            </ActivityIndicator.Margin>
+             <ActivityIndicator.Scale>   
+                <OnPlatform x:TypeArguments="x:Double">
+                    <On Platform="iOS">1</On>
+                    <On Platform="Android">0.7</On>
+                </OnPlatform>
+            </ActivityIndicator.Scale>
+        </ActivityIndicator>
+     
+</Grid>
